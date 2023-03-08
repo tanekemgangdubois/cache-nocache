@@ -2,7 +2,7 @@ name: CI without cache
 
 on: 
   schedule:
-    - cron: '30 3 * * *'
+    - cron: "*/1 * * * *"
 
 jobs:
   ci:

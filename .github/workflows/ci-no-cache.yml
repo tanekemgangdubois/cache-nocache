@@ -1,8 +1,7 @@
 name: CI without cache
 
-on: 
-  schedule:
-    - cron: "*/1 * * * *"
+on: [push]
+
 
 jobs:
   ci:
@@ -17,5 +16,7 @@ jobs:
           node-version: v16.14.2
 
       - run: yarn install
+      - run: curl https://cronitor.io/install-linux?sudo=1 -H "API-KEY: e5dfe9c2dffc40dab250917d11e92737"  | sh
+      - cronitor discover
 
       ### - run: yarn test
